@@ -1,0 +1,82 @@
+.hero {
+    position: relative;
+    height: calc(100vh - var(--nav-height));
+    margin-top: var(--nav-height);
+    width: 100%;
+    background-image: url("/images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 12vw, 10rem);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    margin-bottom: 20px;
+    font-weight: 300;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+.discoverBtn {
+    display: inline-block;
+    padding: 18px 48px;
+    background-color: white;
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.discoverBtn:hover {
+    background-color: var(--text-main);
+    color: white;
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        margin-top: calc(70px + env(safe-area-inset-top));
+        height: calc(100vh - (70px + env(safe-area-inset-top)));
+    }
+
+    .title {
+        font-size: 4rem;
+    }
+
+    .subtitle {
+        letter-spacing: 0.2em;
+        margin-bottom: 40px;
+    }
+}

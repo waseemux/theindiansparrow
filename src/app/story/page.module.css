@@ -1,0 +1,100 @@
+.page {
+  background-color: var(--bg-creme);
+}
+
+.main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + 80px) 24px 0px;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  font-weight: 300;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+  margin: 48px 0;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.paragraph {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-accent);
+  margin-bottom: 28px;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  text-transform: none;
+  color: var(--text-main);
+  font-weight: 400;
+  margin: 80px 0 32px;
+  line-height: 1.2;
+}
+
+.pullQuote {
+  font-family: var(--font-serif-soft);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text-main);
+  text-align: center;
+  margin: 64px 0;
+  padding: 0 20px;
+  text-transform: none;
+}
+
+.quoteAuthor {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-accent);
+  text-align: center;
+  margin-top: 16px;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--text-light);
+  margin: 100px auto 0;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: calc(70px + env(safe-area-inset-top) + 60px) 20px 60px;
+  }
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .image {
+    margin: 32px 0;
+  }
+
+  .sectionTitle {
+    margin: 60px 0 24px;
+  }
+
+  .pullQuote {
+    margin: 48px 0;
+  }
+}

@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,300;400;500&family=Inter:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-creme: #FAF9F6;
+  --bg-beige: #F2EBE3;
+  --text-main: #2C241E;
+  --text-accent: #7E6D5E;
+  --text-light: #A89F94;
+
+  --font-serif: 'Bodoni Moda', serif;
+  --font-serif-soft: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --container-xl: 1440px;
+  --nav-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-creme);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.section-padding {
+  padding: 120px 0;
+}
+
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.tall-heading {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.9;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.serif-italic {
+  font-family: var(--font-serif-soft);
+  font-style: italic;
+  text-transform: none;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 16px 40px;
+  background-color: var(--text-main);
+  color: white;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-primary:hover {
+  background-color: var(--text-accent);
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 14px 36px;
+  border: 1px solid var(--text-main);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-outline:hover {
+  background-color: var(--text-main);
+  color: white;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.with-noise {
+  position: relative;
+}
+
+.with-noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  filter: url(#noiseFilter);
+  opacity: 0.65;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 10;
+}

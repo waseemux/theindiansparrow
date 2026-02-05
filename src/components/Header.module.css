@@ -1,0 +1,256 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  z-index: 1000;
+  transition: background-color 0.5s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.5s ease;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  pointer-events: none;
+}
+
+.nav {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.desktopLinks {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+}
+
+.navLink {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.shopBtn {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 8px 24px;
+  background-color: var(--text-main);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.shopBtn:hover {
+  background-color: white;
+  color: var(--text-main);
+  opacity: 1;
+}
+
+.icons {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--text-main);
+  transition: opacity 0.3s ease;
+}
+
+.iconBtn:hover {
+  opacity: 0.6;
+}
+
+.iconBtn {
+  position: relative;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background: var(--text-main);
+  color: white;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .navLeft {
+    margin-left: 100px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    top: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .nav {
+    height: 70px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+  }
+
+  .desktopLinks {
+    display: none;
+  }
+
+  .navRight {
+    gap: 10px;
+  }
+
+  .shopBtn {
+    padding: 6px 10px;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+
+  .icons {
+    gap: 8px;
+  }
+
+  .iconBtn {
+    padding: 2px;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    color: var(--text-main);
+  }
+
+  .mobileMenu {
+    position: fixed;
+    top: calc(70px + env(safe-area-inset-top));
+    left: 0;
+    width: 100%;
+    height: calc(100vh - (70px + env(safe-area-inset-top)));
+    background-color: white;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    display: none;
+    /* Changed from block to none */
+  }
+
+  .mobileMenu.open {
+    display: block;
+    /* Show only when open */
+    transform: translateX(0);
+  }
+
+  .mobileMenuContent {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .mobileNavLink {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 300;
+  }
+}
+
+.hamburger {
+  display: none;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+/* Profile Dropdown */
+.profileWrapper {
+  position: relative;
+}
+
+.profileDropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: white;
+  border: 1px solid var(--bg-beige);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  min-width: 180px;
+  z-index: 100;
+}
+
+.dropdownItem {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-main);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-decoration: none;
+}
+
+.dropdownItem:hover {
+  background: var(--bg-creme);
+  opacity: 1;
+}
+
+.dropdownItem:not(:last-child) {
+  border-bottom: 1px solid var(--bg-beige);
+}

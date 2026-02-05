@@ -1,0 +1,71 @@
+.newsletter {
+  padding: 120px 0;
+  background-color: var(--bg-creme);
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  text-transform: none;
+  margin-bottom: 16px;
+  color: var(--text-main);
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-accent);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.form {
+  display: flex;
+  gap: 12px;
+}
+
+.input {
+  flex: 1;
+  padding: 16px 20px;
+  border: 1px solid var(--text-light);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: var(--text-main);
+}
+
+.button {
+  padding: 16px 32px;
+  background-color: var(--text-main);
+  color: white;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--text-accent);
+}
+
+@media (max-width: 600px) {
+  .form {
+    flex-direction: column;
+  }
+}

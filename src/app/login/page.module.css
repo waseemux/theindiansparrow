@@ -1,0 +1,228 @@
+.page {
+    background-color: var(--bg-creme);
+    min-height: 100vh;
+}
+
+.main {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: calc(var(--nav-height) + 80px) 24px 80px;
+}
+
+.formContainer {
+    background: white;
+    padding: 60px 48px;
+    text-align: center;
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-main);
+    font-weight: 300;
+    margin-bottom: 16px;
+}
+
+.switchPrompt {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-accent);
+    margin-bottom: 40px;
+}
+
+.switchLink {
+    color: var(--text-main);
+    text-decoration: underline;
+}
+
+.authOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.socialBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 24px;
+    background: white;
+    border: 1px solid var(--bg-beige);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.socialBtn:hover {
+    background: var(--bg-creme);
+}
+
+.socialBtnFb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 24px;
+    background: #1877F2;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.socialBtnFb:hover {
+    background: #166FE5;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 8px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--bg-beige);
+}
+
+.divider span {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.emailBtn {
+    width: 100%;
+    padding: 16px 24px;
+    background: white;
+    border: 1px solid var(--bg-beige);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.emailBtn:hover {
+    background: var(--bg-creme);
+}
+
+.emailForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-accent);
+}
+
+.formGroup input {
+    padding: 14px 16px;
+    border: 1px solid var(--bg-beige);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.formGroup input:focus {
+    border-color: var(--text-accent);
+}
+
+.forgotLink {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--text-accent);
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: -8px;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 18px 40px;
+    background-color: var(--text-main);
+    color: white;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-top: 16px;
+}
+
+.submitBtn:hover:not(:disabled) {
+    background-color: var(--text-accent);
+    transform: translateY(-2px);
+}
+
+.submitBtn:disabled {
+    background: var(--bg-beige);
+    color: var(--text-light);
+    cursor: not-allowed;
+}
+
+.backLink {
+    background: none;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-accent);
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.backLink:hover {
+    color: var(--text-main);
+}
+
+.termsNote {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 32px;
+}
+
+.termsNote a {
+    color: var(--text-main);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: calc(70px + env(safe-area-inset-top) + 40px) 20px 60px;
+    }
+
+    .formContainer {
+        padding: 40px 24px;
+    }
+}

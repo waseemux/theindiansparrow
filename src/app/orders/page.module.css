@@ -1,0 +1,137 @@
+.page {
+    background-color: var(--bg-creme);
+    min-height: 100vh;
+}
+
+.main {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: calc(var(--nav-height) + 60px) 40px 80px;
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-main);
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.ordersContainer {
+    background: white;
+    border: 1px solid var(--bg-beige);
+}
+
+.emptyState {
+    text-align: center;
+    padding: 80px 40px;
+    color: var(--text-accent);
+}
+
+.emptyState svg {
+    margin-bottom: 24px;
+    opacity: 0.4;
+}
+
+.emptyState h2 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-main);
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.emptyState p {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-accent);
+    margin-bottom: 32px;
+}
+
+.shopBtn {
+    padding: 16px 40px;
+    background-color: var(--text-main);
+    color: white;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.shopBtn:hover {
+    background-color: var(--text-accent);
+    transform: translateY(-2px);
+}
+
+/* Order list styles for future implementation */
+.ordersList {
+    display: flex;
+    flex-direction: column;
+}
+
+.orderItem {
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--bg-beige);
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 24px;
+    align-items: center;
+}
+
+.orderItem:last-child {
+    border-bottom: none;
+}
+
+.orderInfo h3 {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.orderInfo p {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--text-accent);
+}
+
+.orderStatus {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    background: var(--bg-beige);
+    color: var(--text-main);
+}
+
+.viewBtn {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--text-main);
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: calc(70px + env(safe-area-inset-top) + 30px) 20px 60px;
+    }
+
+    .emptyState {
+        padding: 60px 24px;
+    }
+
+    .orderItem {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}

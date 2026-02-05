@@ -1,0 +1,28 @@
+.navLogo {
+    width: var(--nav-height);
+    height: var(--nav-height);
+    background-color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.logoContainer {
+    color: white;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+.logoText {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .navLogo {
+        width: 60px;
+        height: 60px;
+    }
+}
