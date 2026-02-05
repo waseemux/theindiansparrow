@@ -409,41 +409,142 @@
 
 @media (max-width: 768px) {
     .main {
-        padding: calc(70px + env(safe-area-inset-top) + 30px) 20px 60px;
+        padding: calc(70px + env(safe-area-inset-top) + 20px) 16px 60px;
     }
 
     .cartHeader {
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .continueLink {
+        font-size: 0.75rem;
+    }
+
+    .emptyCart {
+        padding: 60px 16px;
+    }
+
+    .shopLink {
+        padding: 14px 32px;
+    }
+
+    .itemList {
+        gap: 24px;
+        margin-bottom: 32px;
     }
 
     .cartItem {
-        grid-template-columns: 100px 1fr;
-        gap: 16px;
+        grid-template-columns: 80px 1fr;
+        gap: 12px;
+        padding-bottom: 24px;
+    }
+
+    .itemImage {
+        width: 80px;
+        height: 100px;
+    }
+
+    .itemDetails {
+        gap: 4px;
+    }
+
+    .itemName {
+        font-size: 0.85rem;
+    }
+
+    .itemPrice {
+        font-size: 0.8rem;
+    }
+
+    .itemSize {
+        font-size: 0.75rem;
     }
 
     .quantityControls {
         grid-column: 2;
+        margin-top: 8px;
+    }
+
+    .qtyBtn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .qtyValue {
+        width: 28px;
+        font-size: 0.8rem;
     }
 
     .itemTotal {
         grid-column: 2;
         text-align: left;
+        font-size: 0.85rem;
+        margin-top: 4px;
     }
 
     .removeBtn {
         grid-column: 2;
         justify-self: start;
         padding-left: 0;
+        font-size: 0.65rem;
     }
 
-    .itemImage {
-        width: 100px;
-        height: 130px;
+    .collapsibleHeader {
+        padding: 16px 0;
+        font-size: 0.75rem;
+    }
+
+    .promoRow {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .promoInput {
+        max-width: 100%;
+        padding: 12px 14px;
+        font-size: 0.8rem;
+    }
+
+    .applyBtn {
+        padding: 12px 20px;
+        width: 100%;
+    }
+
+    .noteInput {
+        max-width: 100%;
+        font-size: 0.8rem;
+        min-height: 70px;
     }
 
     .summarySection {
-        padding: 32px 24px;
+        padding: 24px 20px;
+    }
+
+    .summaryTitle {
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+
+    .summaryRow {
+        font-size: 0.8rem;
+    }
+
+    .summaryTotal {
+        font-size: 1rem;
+    }
+
+    .checkoutBtn {
+        padding: 16px 24px;
+    }
+
+    .secureNote {
+        font-size: 0.7rem;
     }
 }

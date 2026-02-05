@@ -38,10 +38,19 @@
 
 @media (max-width: 768px) {
     .quoteSection {
-        padding: 100px 0;
+        padding: 80px 0;
+    }
+
+    .container {
+        padding: 0 24px;
     }
 
     .text {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .author {
+        font-size: 0.75rem;
     }
 }

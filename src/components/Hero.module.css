@@ -71,12 +71,23 @@
         height: calc(100vh - (70px + env(safe-area-inset-top)));
     }
 
+    .content {
+        padding: 0 24px;
+    }
+
     .title {
-        font-size: 4rem;
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        letter-spacing: 0.05em;
     }
 
     .subtitle {
-        letter-spacing: 0.2em;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
         margin-bottom: 40px;
+    }
+
+    .discoverBtn {
+        padding: 16px 36px;
+        font-size: 0.7rem;
     }
 }
