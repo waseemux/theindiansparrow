@@ -51,7 +51,7 @@
 .navRight {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 48px;
 }
 
 .shopBtn {
@@ -74,7 +74,7 @@
 
 .icons {
   display: flex;
-  gap: 24px;
+  gap: 32px;
   align-items: center;
 }
 
@@ -124,7 +124,10 @@
   .header {
     background-color: white;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    height: calc(70px + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
     top: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }

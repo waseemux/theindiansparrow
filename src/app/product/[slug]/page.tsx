@@ -2,6 +2,7 @@ import { getWixClient } from "@/lib/wixClientServer";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductClient from "@/components/ProductClient";
+import ImageGallery from "@/components/ImageGallery";
 import styles from "./page.module.css";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -111,13 +112,7 @@ export default async function ProductPage(props: { params: Promise<{ slug: strin
 
       <main className={styles.main}>
         <div className={styles.grid}>
-          <section className={styles.imageSection}>
-            {images.map((url, index) => (
-              <div key={index} className={`${styles.imageWrapper} with-noise`}>
-                <img src={url} alt={`${product.name} - Image ${index + 1}`} />
-              </div>
-            ))}
-          </section>
+          <ImageGallery images={images as string[]} productName={product.name} />
 
           <ProductClient
             product={{

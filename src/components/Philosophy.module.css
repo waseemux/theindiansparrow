@@ -73,36 +73,38 @@
 
 @media (max-width: 768px) {
     .philosophy {
-        padding: 60px 0;
+        padding: 0;
         height: auto;
     }
 
     .container {
-        padding: 0 20px;
+        padding: 24px;
     }
 
     .grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
     }
 
     .imageWrapper {
-        height: 50vh;
-        max-height: 400px;
+        height: auto;
+        max-height: none;
+        aspect-ratio: 4 / 5;
     }
 
     .textColumn {
         max-width: 100%;
+        padding-bottom: 24px;
     }
 
     .headline {
-        font-size: 2rem;
-        margin-bottom: 24px;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
     }
 
     .description {
         font-size: 0.95rem;
-        margin-bottom: 32px;
+        margin-bottom: 28px;
     }
 
     .storyLink {

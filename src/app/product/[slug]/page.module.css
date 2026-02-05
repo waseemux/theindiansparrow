@@ -22,6 +22,18 @@
   gap: 24px;
 }
 
+/* Desktop: Show all images stacked */
+.desktopImages {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Mobile: Hide on desktop */
+.mobileGallery {
+  display: none;
+}
+
 .imageWrapper {
   position: relative;
   overflow: hidden;
@@ -31,6 +43,45 @@
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Mobile Gallery Styles */
+.galleryTrack {
+  display: flex;
+  transition: transform 0.3s ease-out;
+}
+
+.gallerySlide {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.gallerySlide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.galleryDots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bg-beige);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.activeDot {
+  background: var(--text-main);
+  transform: scale(1.2);
 }
 
 .detailSection {
@@ -288,7 +339,7 @@
 
 @media (max-width: 768px) {
   .main {
-    padding: calc(70px + env(safe-area-inset-top) + 20px) 20px 60px;
+    padding: calc(70px + env(safe-area-inset-top) + 20px) 0 60px;
   }
 
   .grid {
@@ -296,12 +347,29 @@
   }
 
   .imageSection {
-    gap: 12px;
+    gap: 0;
+    margin: 0 -0px;
+  }
+
+  /* Hide desktop stacked images on mobile */
+  .desktopImages {
+    display: none;
+  }
+
+  /* Show swipeable gallery on mobile */
+  .mobileGallery {
+    display: block;
+    overflow: hidden;
   }
 
   .backButton {
     font-size: 0.8rem;
     margin-bottom: 16px;
+    margin-left: 20px;
+  }
+
+  .detailSection {
+    padding: 0 20px;
   }
 
   .title {

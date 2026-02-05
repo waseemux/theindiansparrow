@@ -49,6 +49,7 @@ export default function ShopClient({ products, minPrice, maxPrice, availableSize
     const [sortOpen, setSortOpen] = useState(false);
     const [priceOpen, setPriceOpen] = useState(true);
     const [sizeOpen, setSizeOpen] = useState(false);
+    const [mobilePanel, setMobilePanel] = useState<"filter" | "sort" | null>(null);
 
     // Update URL params
     const updateUrl = (params: Record<string, string | null>) => {
@@ -150,6 +151,123 @@ export default function ShopClient({ products, minPrice, maxPrice, availableSize
             </div>
 
             <div className={styles.grid}>
+                {/* Mobile Sticky Filter Bar */}
+                <div className={styles.mobileFilterBar}>
+                    <button
+                        className={styles.mobileFilterBtn}
+                        onClick={() => setMobilePanel(mobilePanel === "filter" ? null : "filter")}
+                    >
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                            <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" />
+                        </svg>
+                        Filter
+                    </button>
+                    <button
+                        className={styles.mobileSortBtn}
+                        onClick={() => setMobilePanel(mobilePanel === "sort" ? null : "sort")}
+                    >
+                        Sort
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                            <path d="M3 6h18M6 12h12M9 18h6" />
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Mobile Filter Panel */}
+                {mobilePanel === "filter" && (
+                    <div className={styles.mobileDropdownPanel}>
+                        <div className={styles.filterGroup}>
+                            <div className={styles.filterHeader} onClick={() => setPriceOpen(!priceOpen)}>
+                                <span className={styles.filterLabel}>Price</span>
+                                <button className={styles.filterToggle}>{priceOpen ? "−" : "+"}</button>
+                            </div>
+                            {priceOpen && (
+                                <div className={styles.filterContent}>
+                                    <div className={styles.dualRangeSlider}>
+                                        <div className={styles.sliderTrack}>
+                                            <div
+                                                className={styles.sliderRange}
+                                                style={{
+                                                    left: `${((priceMin - minPrice) / (maxPrice - minPrice)) * 100}%`,
+                                                    right: `${100 - ((priceMax - minPrice) / (maxPrice - minPrice)) * 100}%`
+                                                }}
+                                            />
+                                        </div>
+                                        <input
+                                            type="range"
+                                            min={minPrice}
+                                            max={maxPrice}
+                                            value={priceMin}
+                                            onChange={(e) => {
+                                                const val = Number(e.target.value);
+                                                if (val < priceMax) handlePriceChange("min", val);
+                                            }}
+                                            className={styles.rangeSlider}
+                                        />
+                                        <input
+                                            type="range"
+                                            min={minPrice}
+                                            max={maxPrice}
+                                            value={priceMax}
+                                            onChange={(e) => {
+                                                const val = Number(e.target.value);
+                                                if (val > priceMin) handlePriceChange("max", val);
+                                            }}
+                                            className={styles.rangeSlider}
+                                        />
+                                    </div>
+                                    <div className={styles.priceRange}>
+                                        <span>{formatPrice(priceMin)}</span>
+                                        <span>{formatPrice(priceMax)}</span>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                        {availableSizes.length > 0 && (
+                            <div className={styles.filterGroup}>
+                                <div className={styles.filterHeader} onClick={() => setSizeOpen(!sizeOpen)}>
+                                    <span className={styles.filterLabel}>Size</span>
+                                    <button className={styles.filterToggle}>{sizeOpen ? "−" : "+"}</button>
+                                </div>
+                                {sizeOpen && (
+                                    <div className={styles.filterContent}>
+                                        <div className={styles.sizeOptions}>
+                                            {availableSizes.map((size) => (
+                                                <label key={size} className={styles.sizeOption}>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={selectedSizes.includes(size)}
+                                                        onChange={() => handleSizeToggle(size)}
+                                                    />
+                                                    <span>{size}</span>
+                                                </label>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                )}
+
+                {/* Mobile Sort Panel */}
+                {mobilePanel === "sort" && (
+                    <div className={styles.mobileDropdownPanel}>
+                        {(Object.keys(SORT_LABELS) as SortOption[]).map((option) => (
+                            <button
+                                key={option}
+                                className={`${styles.sortOption} ${sortBy === option ? styles.active : ""}`}
+                                onClick={() => {
+                                    handleSortChange(option);
+                                    setMobilePanel(null);
+                                }}
+                            >
+                                {SORT_LABELS[option]}
+                            </button>
+                        ))}
+                    </div>
+                )}
+
                 <aside className={styles.filters}>
                     <div className={styles.filterTitle}>Filter by</div>
 
