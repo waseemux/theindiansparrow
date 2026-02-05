@@ -440,15 +440,16 @@
 
   /* Mobile Filter/Sort Dropdown Panel */
   .mobileDropdownPanel {
+    display: block;
     position: fixed;
-    top: calc(70px + env(safe-area-inset-top) + 52px);
+    top: calc(70px + env(safe-area-inset-top) + 70px);
     left: 0;
     right: 0;
     background: white;
     border-bottom: 1px solid var(--bg-beige);
     padding: 20px 24px;
     z-index: 49;
-    max-height: 60vh;
+    max-height: 50vh;
     overflow-y: auto;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
